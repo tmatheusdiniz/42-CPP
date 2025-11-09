@@ -1,0 +1,76 @@
+==216== Memcheck, a memory error detector
+==216== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==216== Using Valgrind-3.24.0-fcdaa47426-20241101 and LibVEX; rerun with -h for copyright info
+==216== Command: ./abstractionAnimal
+==216== Parent PID: 1
+==216== 
+--216-- 
+--216-- Valgrind options:
+--216--    --leak-check=full
+--216--    --show-leak-kinds=all
+--216--    --track-origins=yes
+--216--    --verbose
+--216--    --log-file=/workspace/valgrind-out.txt
+--216-- Contents of /proc/version:
+--216--   Linux version 6.11.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 13.2.1_git20240309) 13.2.1 20240309, GNU ld (GNU Binutils) 2.42) #1 SMP Wed Oct 22 09:37:46 UTC 2025
+--216-- 
+--216-- Arch and hwcaps: ARM64, LittleEndian, v8-fhm-dpbcvadp-sha3-rdm-atomics-bf16-fp16-vfp16
+--216-- Page sizes: currently 4096, max supported 65536
+--216-- Valgrind library directory: /usr/libexec/valgrind
+--216-- Reading syms from /workspace/abstractionAnimal
+--216-- Reading syms from /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+--216--   Considering /usr/lib/debug/.build-id/2c/9ac3cfeda05db3895dbefeabe484b6851b341e.debug ..
+--216--   .. build-id is valid
+--216-- Reading syms from /usr/libexec/valgrind/memcheck-arm64-linux
+--216--    object doesn't have a dynamic symbol table
+--216-- Scheduler: using generic scheduler lock implementation.
+--216-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==216== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-216-by-???-on-5a971d9c8b75
+==216== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-216-by-???-on-5a971d9c8b75
+==216== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-216-by-???-on-5a971d9c8b75
+==216== 
+==216== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==216== don't want to do, unless you know exactly what you're doing,
+==216== or are doing some strange experiment):
+==216==   /usr/bin/vgdb --pid=216 ...command...
+==216== 
+==216== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==216==   /path/to/gdb ./abstractionAnimal
+==216== and then give GDB the following command
+==216==   target remote | /usr/bin/vgdb --pid=216
+==216== --pid is optional if only one valgrind process is running
+==216== 
+--216-- REDIR: 0x401d340 (ld-linux-aarch64.so.1:strlen) redirected to 0x580c2d10 (???)
+--216-- REDIR: 0x401c900 (ld-linux-aarch64.so.1:strcmp) redirected to 0x580c2d64 (???)
+--216-- REDIR: 0x401c840 (ld-linux-aarch64.so.1:index) redirected to 0x580c2d38 (???)
+--216-- Reading syms from /usr/libexec/valgrind/vgpreload_core-arm64-linux.so
+--216-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so
+--216-- Reading syms from /usr/local/lib64/libstdc++.so.6.0.34
+--216-- Reading syms from /usr/lib/aarch64-linux-gnu/libm.so.6
+--216-- Reading syms from /usr/local/lib64/libgcc_s.so.1
+--216-- Reading syms from /usr/lib/aarch64-linux-gnu/libc.so.6
+--216--   Considering /usr/lib/debug/.build-id/b3/2c35038e644c70c27979cb0b90182f43f6794b.debug ..
+--216--   .. build-id is valid
+--216-- REDIR: 0x4cbbd00 (libc.so.6:memchr) redirected to 0x48507cc (_vgnU_ifunc_wrapper)
+--216-- REDIR: 0x4cbf600 (libc.so.6:strlen) redirected to 0x48507cc (_vgnU_ifunc_wrapper)
+--216-- REDIR: 0x4cbfbc0 (libc.so.6:rindex) redirected to 0x488dee8 (rindex)
+--216-- REDIR: 0x4cbc840 (libc.so.6:memset) redirected to 0x48507cc (_vgnU_ifunc_wrapper)
+--216-- REDIR: 0x4cc4000 (libc.so.6:__memset_zva64) redirected to 0x4892a88 (memset)
+--216-- REDIR: 0x4cc4280 (libc.so.6:__GI_strlen) redirected to 0x488e780 (__GI_strlen)
+--216-- REDIR: 0x4cbbd40 (libc.so.6:bcmp) redirected to 0x48921c0 (bcmp)
+--216-- REDIR: 0x4cbf7a4 (libc.so.6:strncmp) redirected to 0x488f160 (strncmp)
+--216-- REDIR: 0x4cb7584 (libc.so.6:malloc) redirected to 0x48853e0 (malloc)
+--216-- REDIR: 0x4cc4140 (libc.so.6:__strlen_asimd) redirected to 0x488e740 (strlen)
+--216-- REDIR: 0x4cbbf20 (libc.so.6:memcpy) redirected to 0x48507cc (_vgnU_ifunc_wrapper)
+--216-- REDIR: 0x4cc30c0 (libc.so.6:__GI_memcpy) redirected to 0x48908cc (__GI_memcpy)
+--216-- REDIR: 0x496f620 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4885b90 (operator new(unsigned long))
+--216-- REDIR: 0x496d340 (libstdc++.so.6:operator delete(void*)) redirected to 0x4888f20 (operator delete(void*))
+--216-- REDIR: 0x4cb7e60 (libc.so.6:free) redirected to 0x4888480 (free)
+==216== 
+==216== HEAP SUMMARY:
+==216==     in use at exit: 0 bytes in 0 blocks
+==216==   total heap usage: 4 allocs, 4 frees, 84,224 bytes allocated
+==216== 
+==216== All heap blocks were freed -- no leaks are possible
+==216== 
+==216== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

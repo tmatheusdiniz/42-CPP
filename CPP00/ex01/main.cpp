@@ -40,20 +40,20 @@ int isValidNumber(const std::string str)
 
 std::string getInput(const std::string& prompt, bool is_phone = false)
 {
-	std::string user_input;
+	std::string userInput;
 
 	while (true)
 	{
 		std::cout << prompt;
-		std::getline(std::cin, user_input);
+		std::getline(std::cin, userInput);
 		if (std::cin.eof())
 			exit(0);
-		if (user_input.empty())
+		if (userInput.empty())
 		{
 			std::cout << RED << "the input can't be empty. Please try again!" << DEFAULT << std::endl;
 			continue;
 		}
-		if (is_phone == true && !isValidNumber(user_input))
+		if (is_phone == true && !isValidNumber(userInput))
 		{
 			std::cout << RED <<
 				"The phone number must contain just digits.Please try again!"
@@ -62,20 +62,20 @@ std::string getInput(const std::string& prompt, bool is_phone = false)
 		}
 		break;
 	}
-	return (user_input);
+	return (userInput);
 }
 
 int main (int v, char **str)
 {
 	PhoneBook phone_book;
-	std::string user_input;
+	std::string userInput;
 	while (true)
 	{
 		printMenu();
-		std::getline(std::cin, user_input);
+		std::getline(std::cin, userInput);
 		if (std::cin.fail())
 			exit(0);
-		if (user_input == "ADD")
+		if (userInput == "ADD")
 		{
 			Contact contact;
 			contact.setFiritsName(getInput("Type the first name: "));
@@ -85,7 +85,7 @@ int main (int v, char **str)
 			contact.setDarkestSecret(getInput("Type the darkest secret: "));
 			phone_book.addContact(contact);
 		}
-		else if (user_input == "SEARCH")
+		else if (userInput == "SEARCH")
 		{
 			if (phone_book.getCounter() == 0)
 			{
@@ -98,8 +98,8 @@ int main (int v, char **str)
 			std::cout << BLUE << "type the index of the contact (1...8)"
 				<< DEFAULT << std::endl;
 			std::cout << " > ";
-			std::getline(std::cin, user_input);
-			int index = std::atoi(user_input.c_str());
+			std::getline(std::cin, userInput);
+			int index = std::atoi(userInput.c_str());
 			if (index < 1 || index > 8)
 			{
 				std::cout << RED << "input out of the range (1...8). Please try again"
@@ -108,7 +108,7 @@ int main (int v, char **str)
 			}
 			phone_book.displayOneContact(index - 1);
 		}
-		else if (user_input == "EXIT")
+		else if (userInput == "EXIT")
 		{
 			std::cout << "Goodbye!\n";
 			break;
