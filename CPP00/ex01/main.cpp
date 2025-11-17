@@ -30,7 +30,7 @@ void	printMenu()
 
 int isValidNumber(const std::string str)
 {
-	for (int i = 0; i < str.length(); i++)
+	for (std::size_t i = 0; i < str.length(); i++)
 	{
 		if (!isdigit(str[i]))
 			return (false);
@@ -65,7 +65,7 @@ std::string getInput(const std::string& prompt, bool is_phone = false)
 	return (userInput);
 }
 
-int main (int v, char **str)
+int main ()
 {
 	PhoneBook phone_book;
 	std::string userInput;

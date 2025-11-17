@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstddef>
 #include <cstring>
 #include <iostream>
 
@@ -20,17 +21,15 @@ int main (int v, char**str)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
-	if (v == 2)
+	else
 	{
-		if (str[1] && !strcmp(str[1], "DAMNIT") && !strcmp(str[2], "!") && !strcmp(str[3], "Sorry students, I thought this thing was off."))
-			std::cout << "SHHHHH... I THINK THE STUDENTS ARE ASLEEP..." << std::endl;
-		else
+		for (int i = 1; i < v; i ++)
 		{
-			int res = strcmp(str[1], "shhhhh... I think the students are asleep...");
-			if (res == 0)
-				std::cout << "SHHHHH... I THINK THE STUDENTS ARE ASLEEP..." << std::endl;
-			return (0);
+			std::string input = str[i];
+			for (std::size_t j = 0; j < input.length(); j++)
+				std::cout << (char)std::toupper(input[j]);
 		}
 	}
+	std::cout << std::endl;
 	return (0);
 }
