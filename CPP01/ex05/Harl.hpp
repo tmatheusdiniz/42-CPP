@@ -30,7 +30,7 @@ class Harl
 struct MappingCommands
 {
 	std::string f;
-	void (Harl::*function) ();
+	void (Harl::*functions) ();
 };
 
 #endif

@@ -14,13 +14,16 @@
 
 int main()
 {
-	Zombie* horde = zombieHorde(5, "nikita");
-	Zombie *hordeNoSense = zombieHorde(3, "herewego");
+	Zombie* horde = zombieHorde(5, "darksquad");
+	Zombie *hordeNonSense = zombieHorde(3, "herewego");
 
 	horde[0].announce();
+	horde[1].announce();
 	horde[2].announce();
+	horde[3].announce();
+	horde[4].announce();
 	std::cout << "hello?" << std::endl;
-	hordeNoSense[2].announce();
+	hordeNonSense[2].announce();
 	delete[] horde;
-	delete[] hordeNoSense;
+	delete[] hordeNonSense;
 }

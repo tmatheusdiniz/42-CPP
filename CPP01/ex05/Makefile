@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = harl
+NAME        = harlComplain
 
 CPP         = c++
 CPPFLAGS    = -g -Wall -Wextra -Werror -std=c++98

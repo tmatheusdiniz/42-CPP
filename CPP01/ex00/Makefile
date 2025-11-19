@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = zombie
+NAME        = zombies
 
 CPP         = c++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98

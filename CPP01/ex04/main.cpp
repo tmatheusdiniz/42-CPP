@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <string>
-#include "handleFile.hpp"
+#include "HandleFile.hpp"
 
 int main(int v, char **str)
 {

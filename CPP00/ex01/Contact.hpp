@@ -27,17 +27,17 @@ class Contact
 		Contact();
 		~Contact();
 		// Getters
-		std::string getFirstName() const {return this->_firstName;}
-		std::string getLastName() const {return this->_lastName;}
-		std::string getNickName() const {return this->_nickName;}
-		std::string getDarkestSecret() const {return this->_darkestSecret;}
-		std::string getPhoneNumber() const {return this->_phoneNumber;}
+		std::string getFirstName() const;
+		std::string getLastName() const;
+		std::string getNickName() const;
+		std::string getDarkestSecret() const;
+		std::string getPhoneNumber() const;
 		// Setters
-		void setFiritsName(const std::string& first_name) {this->_firstName = first_name;}
-		void setLastName(const std::string& last_name) {this->_lastName = last_name;}
-		void setNickName(const std::string& nick_name) {this->_nickName = nick_name;}
-		void setDarkestSecret(const std::string& darkest_secret) {this->_darkestSecret = darkest_secret;}
-		void setPhoneNumber(const std::string &phone_number) {this->_phoneNumber = phone_number;}
+		void setFiritsName(const std::string &firstName);
+		void setLastName(const std::string &lastName);
+		void setNickName(const std::string &nickName);
+		void setDarkestSecret(const std::string &darkestSecret);
+		void setPhoneNumber(const std::string &phoneNumber);
 };
 
 #endif

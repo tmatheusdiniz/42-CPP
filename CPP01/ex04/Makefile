@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = filehandler
+NAME        = sedSimulation
 
 CPP         = c++
 CPPFLAGS    = -g -Wall -Wextra -Werror -std=c++98

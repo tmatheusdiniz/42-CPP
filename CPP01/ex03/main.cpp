@@ -26,6 +26,6 @@ int main()
 	mrm.attack();
 	mrm.setWeapon(&club);
 	mrm.attack();
-	club.setType("i'm kind of trying");
+	club.setType("black sword");
 	mrm.attack();
 }

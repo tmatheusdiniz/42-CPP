@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = zombie
+NAME        = zombieHordes
 
 CPP         = c++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
