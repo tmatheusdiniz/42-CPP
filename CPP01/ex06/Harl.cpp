@@ -13,6 +13,7 @@
 #include "Harl.hpp"
 #include <iostream>
 #include <ostream>
+#include <string>
 
 void Harl::debug( void )
 {
@@ -45,17 +46,22 @@ void Harl::error( void )
 
 int handlingChoice(std::string level)
 {
-	int x;
-	if (level == "DEBUG")
-		x = 0;
-	else if (level == "INFO")
-		x = 1;
-	else if (level == "WARNING")
-		x = 2;
-	else if (level == "ERROR")
-		x = 3;
-	else
-		x = 4;
+	int x = 4;
+	std::string levels[] =
+	{
+		"DEBUG",
+		"INFO",
+		"WARNINIG",
+		"ERROR"
+	};
+	for(int i = 0; i < 4; i++)
+	{
+		if (levels[i] == level)
+		{
+			x = i;
+			break;
+		}
+	}
 	switch (x)
 	{
 		case 0:
@@ -79,7 +85,7 @@ void Harl::complain( std::string level )
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
-		&Harl::error
+		&Harl::error,
 	};
 	int choice = handlingChoice(level);
 	if (choice == -1)
