@@ -43,7 +43,7 @@ void handleFile(std::string filename, std::string s1, std::string s2)
 		std::cout << "the strings must not be empty" << std::endl;
 		return ;
 	}
-	file.open(filename, std::ifstream::in);	
+	file.open(filename.c_str(), std::ifstream::in);
 	if (!file.is_open())
 	{
 		std::cout << "Occurred an error trying to open the file" << std::endl;

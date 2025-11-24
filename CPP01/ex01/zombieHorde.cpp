@@ -17,11 +17,13 @@ Zombie* zombieHorde( int N, std::string name )
 	if (N <= 0)
 		return (NULL);
 	int i = 0;
-	Zombie* horde = new Zombie[N];
 
+	Zombie* horde = new Zombie[N];
 	while (i < N)
 	{
-		horde[i].setName(name + " @" + std::to_string(i + 1));
+		char buffer[10];
+		sprintf(buffer, "%d", i + 1);
+		horde[i].setName(name + " @" + std::string(buffer));
 		i ++;
 	}
 	return (horde);

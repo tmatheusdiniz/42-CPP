@@ -21,7 +21,6 @@ void HumanB::setWeapon(Weapon *w)
 HumanB::HumanB(const std::string &_name)
 {
 	this->_name = _name;
-	this->_weapon = nullptr;
 }
 
 void HumanB::attack()

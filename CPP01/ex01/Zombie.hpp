@@ -16,6 +16,7 @@
 #include <iostream>
 #include <ostream>
 #include <string>
+#include <cstdio>
 
 class Zombie
 {
