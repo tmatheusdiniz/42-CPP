@@ -74,7 +74,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_health > 0)
 	{
-		if ((this->_health - amount) < 0)
+		if (static_cast<int>((this->_health - amount)) < 0)
 			_health = 0;
 		else
 			_health = _health - amount;
