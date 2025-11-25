@@ -14,10 +14,8 @@
 #include "Fixed.hpp"
 
 
-int main(int v, char **str)
+int main()
 {
-	(void)v;
-	(void)str;
 	Fixed a;
 	Fixed b( a );
 	Fixed c;

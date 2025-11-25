@@ -15,14 +15,12 @@
 Fixed::Fixed()
 {
 	this->_rawBits = 0;
-	this->_fracBits = 8;
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
 	this->_rawBits = other._rawBits;
-	this->_fracBits = other._fracBits;
 	std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -30,8 +28,7 @@ Fixed& Fixed::operator = (const Fixed& other)
 {
 	if (this != &other)
 	{
-		_rawBits = other._rawBits;
-		this->_fracBits = other._fracBits;
+		this->_rawBits = other._rawBits;
 	}
 	std::cout << "Copy assignment operator called" << std::endl;
 	return *this;

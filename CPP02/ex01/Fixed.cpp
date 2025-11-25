@@ -85,28 +85,28 @@ int Fixed::toInt( void ) const
 
 int Fixed::getIntegerPart() const
 {
-    return (this->_rawBits & INT_MASK) >> this->_fracBits;
+	return (this->_rawBits & INT_MASK) >> this->_fracBits;
 }
 
 int Fixed::getFractionalRaw() const
 {
-    return this->_rawBits & FRAC_MASK;
+	return (this->_rawBits & FRAC_MASK);
 }
 
 float Fixed::getFractionalFloat() const
 {
-    int fracRaw = this->_rawBits & FRAC_MASK;
-    return static_cast<float>(fracRaw) / (1 << this->_fracBits);
+	int fracRaw = this->_rawBits & FRAC_MASK;
+	return (static_cast<float>(fracRaw) / (1 << this->_fracBits));
 }
 
 void Fixed::printParts() const
 {
-    std::cout << "Raw: " << this->_rawBits << std::endl;
-    std::cout << "Integer part: " << getIntegerPart() << std::endl;
-    std::cout << "Frac raw: " << getFractionalRaw() << std::endl;
-    std::cout << "Frac float: " << getFractionalFloat() << std::endl;
-    std::cout << "Total: " << toFloat() << std::endl;
-    std::cout << "---" << std::endl;
+	std::cout << "Raw: " << this->_rawBits << std::endl;
+	std::cout << "Integer part: " << getIntegerPart() << std::endl;
+	std::cout << "Frac raw: " << getFractionalRaw() << std::endl;
+	std::cout << "Frac float: " << getFractionalFloat() << std::endl;
+	std::cout << "Total: " << toFloat() << std::endl;
+	std::cout << "---" << std::endl;
 }
 
 // ---------------------------------------------

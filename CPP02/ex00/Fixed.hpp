@@ -20,7 +20,7 @@ class Fixed
 {
 	private:
 		int _rawBits;
-		int _fracBits;
+		static const int _fracBits = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed& other);
