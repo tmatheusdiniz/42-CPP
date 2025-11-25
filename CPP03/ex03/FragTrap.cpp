@@ -89,7 +89,7 @@ void FragTrap::highFivesGuys()
 			<< " is now in High Fives mode!" << std::endl;
 }
 
-void FragTrap::setHighFives(bool sign)
+void FragTrap::setHighFivesGuys(bool sign)
 {
 	_highFives = sign;
 }

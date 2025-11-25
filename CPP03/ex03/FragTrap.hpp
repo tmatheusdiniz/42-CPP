@@ -28,7 +28,7 @@ class FragTrap: virtual public ClapTrap
 		FragTrap &operator = (const FragTrap &other);
 		void attack(const std::string &target);
 		void highFivesGuys(void);
-		void setHighFives(bool sign);
+		void setHighFivesGuys(bool sign);
 		void takeDamage(unsigned int amount);
 };
 

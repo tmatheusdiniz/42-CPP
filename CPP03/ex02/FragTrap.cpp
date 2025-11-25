@@ -70,10 +70,10 @@ void FragTrap::highFivesGuys()
 {
 	if (_highFives)
 		std::cout << "FragTrap " << _name
-			<< " is now in Gate keeper mode!" << std::endl;
+			<< " is now in highFivesGuys mode!" << std::endl;
 }
 
-void FragTrap::setGuardGate(bool sign)
+void FragTrap::setHighFivesGuys(bool sign)
 {
 	_highFives = sign;
 }
