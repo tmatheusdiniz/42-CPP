@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreinald <mreinald@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 09:34:52 by mreinald          #+#    #+#             */
-/*   Updated: 2025/11/03 09:38:29 by mreinald         ###   ########.fr       */
+/*   Created: 2025/12/01 15:33:28 by mreinald          #+#    #+#             */
+/*   Updated: 2025/12/01 15:38:55 by mreinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+#include "AMateria.hpp"
 
-#include <iostream>
-#include <string>
-
-class AAnimal
+AMateria::AMateria(std::string const & type) : type(type)
 {
-	protected:
-		std::string type;
-	public:
-		AAnimal();
-		AAnimal(const AAnimal &src);
-		AAnimal &operator = (const AAnimal &src);
-		virtual ~AAnimal();
-		virtual void makeSound() const = 0;
-		std::string getType() const;
-};
 
-#endif
+}
+
+AMateria::AMateria(const AMateria& src) : type(src.type)
+{
+
+}
+
+AMateria& AMateria::operator=(const AMateria& src)
+{
+	if (this != &src)
+	{
+		this->type= src.type;
+	}
+	return (*this);
+}
+
+AMateria::~AMateria()
+{
+
+}
+
+std::string const & AMateria::getType() const
+{
+	return (this->type);
+}

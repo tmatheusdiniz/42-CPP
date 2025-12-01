@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
 WrongAnimal::WrongAnimal() : type("")
@@ -17,7 +18,7 @@ WrongAnimal::WrongAnimal() : type("")
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const std::string &type) : type(type)
+WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
 	std::cout << "WrongAnimal constructor called" << std::endl;
 }

@@ -12,8 +12,9 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : AAnimal("Cat")
+Cat::Cat() : AAnimal()
 {
+	this->type = "Cat";
 	this->brain = new Brain();
 	std::cout << "Cat constructor called" << std::endl;
 }
@@ -39,10 +40,10 @@ Cat &Cat::operator = (const Cat &src)
 Cat::~Cat() 
 {
 	delete this->brain;
-    std::cout << "Cat destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 void Cat::makeSound() const 
 {
-    std::cout << "Meow! Meow!" << std::endl;
+	std::cout << "Meow! Meow!" << std::endl;
 }

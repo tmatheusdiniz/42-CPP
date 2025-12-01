@@ -18,8 +18,9 @@ AAnimal::AAnimal() : type("")
 	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-AAnimal::AAnimal(const std::string &type) : type(type)
+AAnimal::AAnimal(const AAnimal &src)
 {
+	this->type = src.type;
 	std::cout << "AAnimal copy constructor called" << std::endl;
 }
 

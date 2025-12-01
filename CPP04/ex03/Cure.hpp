@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreinald <mreinald@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 09:34:52 by mreinald          #+#    #+#             */
-/*   Updated: 2025/11/03 09:38:29 by mreinald         ###   ########.fr       */
+/*   Created: 2025/11/28 09:33:27 by mreinald          #+#    #+#             */
+/*   Updated: 2025/11/28 09:58:57 by mreinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
-#include <iostream>
-#include <string>
+#include "AMateria.hpp"
 
-class AAnimal
+class Cure : public AMateria
 {
-	protected:
-		std::string type;
 	public:
-		AAnimal();
-		AAnimal(const AAnimal &src);
-		AAnimal &operator = (const AAnimal &src);
-		virtual ~AAnimal();
-		virtual void makeSound() const = 0;
-		std::string getType() const;
+		Cure();
+		Cure(const Cure &src);
+		Cure &operator = (const Cure &src);
+		~Cure();
+		AMateria *clone() const override;
 };
 
 #endif
