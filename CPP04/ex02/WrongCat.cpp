@@ -12,7 +12,7 @@
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal("Cat")
+WrongCat::WrongCat()
 {
 	std::cout << "WrongCat constructor called" << std::endl;
 }
@@ -32,12 +32,12 @@ WrongCat &WrongCat::operator = (const WrongCat &src)
 	return (*this);
 }
 
-WrongCat::~WrongCat() 
+WrongCat::~WrongCat()
 {
     std::cout << "WrongCat destructor called" << std::endl;
 }
 
-void WrongCat::makeSound() const 
+void WrongCat::makeSound() const
 {
 	std::cout << "Roar, Roar!" << std::endl;
 }

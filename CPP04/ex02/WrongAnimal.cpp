@@ -13,12 +13,12 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-WrongAnimal::WrongAnimal() : type("")
+WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &src)
+WrongAnimal::WrongAnimal(const WrongAnimal &src) : type(src.type)
 {
 	std::cout << "WrongAnimal constructor called" << std::endl;
 }
@@ -32,17 +32,17 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 	return (*this);
 }
 
-WrongAnimal::~WrongAnimal() 
+WrongAnimal::~WrongAnimal()
 {
     std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-void WrongAnimal::makeSound() const 
+void WrongAnimal::makeSound() const
 {
     std::cout << "** WrongAnimal doesn't make any sound **" << std::endl;
 }
 
-std::string WrongAnimal::getType() const 
+std::string WrongAnimal::getType() const
 {
     return (this->type);
 }

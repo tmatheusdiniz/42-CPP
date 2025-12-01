@@ -26,5 +26,17 @@ int main()
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+	Brain brain;
+	for (int i = 0; i < 10; i++)
+	{
+		brain.setIdea(i, "cat thinking about whiskas");
+	}
+	for (int k = 0; k < 10; k++)
+	{
+		std::cout << brain.getIdea(k) << std::endl;
+	}
+	delete (meta);
+	delete (j);
+	delete(i);
 	return 0;
 }
