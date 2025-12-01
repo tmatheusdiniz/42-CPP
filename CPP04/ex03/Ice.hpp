@@ -22,7 +22,8 @@ class Ice : public AMateria
 		Ice(const Ice &src);
 		Ice &operator = (const Ice &src);
 		~Ice();
-		AMateria *clone() const override;
+		virtual AMateria *clone() const;
+		virtual void use(ICharacter& target);
 };
 
 #endif

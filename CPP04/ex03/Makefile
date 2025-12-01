@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = materiaInventory
+NAME        = alchemy
 
 CPP         = c++
 CPPFLAGS    = -g -Wall -Wextra -Werror -std=c++98
 
-SRC         = main.cpp
+SRC         = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJ         = $(SRC:.cpp=.o)
 
 all: $(NAME)

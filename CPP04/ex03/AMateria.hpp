@@ -10,11 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef AMATERIA_H
 #define AMATERIA_H
 
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -24,11 +28,11 @@ class AMateria
 		AMateria(std::string const &type);
 		AMateria(const AMateria &src);
 		AMateria &operator = (const AMateria &src);
-		~AMateria();
+		virtual ~AMateria();
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		// when i do = 0 it means the class is pure virtual which means it cannot be instantiated directly
-		// virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target);
 };
 
 #endif

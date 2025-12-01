@@ -14,6 +14,7 @@
 #define CURE_HPP
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Cure : public AMateria
 {
@@ -22,7 +23,8 @@ class Cure : public AMateria
 		Cure(const Cure &src);
 		Cure &operator = (const Cure &src);
 		~Cure();
-		AMateria *clone() const override;
+		virtual AMateria *clone() const;
+		virtual void use (ICharacter &target);
 };
 
 #endif
