@@ -1,64 +1,47 @@
 #include "Array.hpp"
+#include <array>
+#include <exception>
 #include <iostream>
+#include <ostream>
 #include <string>
 
 int main()
 {
-	// Empty array construction
-	Array<int> empty;
-	std::cout << "empty.size() = " << empty.size() << std::endl;
+	// Below I have a built-in Array
+	char chars[10];
+	chars[0] = 'f';
+	chars[1] = 'o';
+	chars[2] = 'r';
+	chars[3] = 't';
+	chars[4] = 'y';
+	chars[5] = 't';
+	chars[6] = 'w';
+	chars[7] = 'o';
+	chars[8] = 44;
+	std::cout << chars[8] << std::endl;
 
-	// Sized construction: elements are default-initialized
+	// std container
+	std::array<int, 2> values;
+	values[0] = 42;
+	values[1] = 42;
+	std::cout << values.max_size() << std::endl;
+	std::cout << values.back() << std::endl;
+
+	// My class
 	Array<int> numbers(5);
-	std::cout << "numbers.size() = " << numbers.size() << std::endl;
-	std::cout << "default value at [0] = " << numbers[0] << std::endl;
-
-	// Fill the array through the subscript operator
-	for (unsigned int i = 0; i < numbers.size(); i++)
-		numbers[i] = static_cast<int>(i) * 10;
-
-	std::cout << "numbers: ";
-	for (unsigned int i = 0; i < numbers.size(); i++)
-		std::cout << numbers[i] << " ";
-	std::cout << std::endl;
-
-	// Copy construction is a deep copy
-	Array<int> copy(numbers);
-	copy[0] = 999;
-	std::cout << "after modifying the copy -> numbers[0] = " << numbers[0]
-			  << ", copy[0] = " << copy[0] << std::endl;
-
-	// Assignment operator is a deep copy too
-	Array<int> assigned;
-	assigned = numbers;
-	assigned[1] = -1;
-	std::cout << "after modifying assigned -> numbers[1] = " << numbers[1]
-			  << ", assigned[1] = " << assigned[1] << std::endl;
-
-	// Out-of-bounds access throws
+	std::cout << numbers.size() << std::endl;
+	numbers[0] = 42;
+	std::cout << numbers[0] << std::endl;
 	try
 	{
-		std::cout << "accessing numbers[42]..." << std::endl;
-		std::cout << numbers[42] << std::endl;
+		std::cout << "exception out of bounds trigger: " << numbers[5] << std::endl;
 	}
-	catch (const std::exception& e)
+	catch (std::exception &e)
 	{
-		std::cout << "caught exception: " << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-
-	// Works with any type
-	Array<std::string> words(3);
-	words[0] = "hello";
-	words[1] = "template";
-	words[2] = "world";
-	std::cout << "words: ";
-	for (unsigned int i = 0; i < words.size(); i++)
-		std::cout << words[i] << " ";
-	std::cout << std::endl;
-
-	// const array: only the const operator[] is usable
-	const Array<int> readOnly(numbers);
-	std::cout << "readOnly[2] = " << readOnly[2] << std::endl;
-
-	return (0);
+	// testing const overloader
+	const Array<char> letters(2);
+	char c = letters[0];
+	std::cout << c << std::endl;
 }
