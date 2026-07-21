@@ -20,9 +20,7 @@ class BitcoinExchange
 		double	getRateForDate(const std::string& date) const;
 
 		static bool	isValidDate(const std::string& date);
-		static bool	parseValue(const std::string& str, double& value,
-						std::string& error);
-		static std::string	trim(const std::string& str);
+		static bool	parseValue(const std::string& s, double& out);
 };
 
 #endif

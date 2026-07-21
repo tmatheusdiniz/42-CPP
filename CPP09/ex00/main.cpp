@@ -1,11 +1,22 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
-int main(int v, char **strs)
+int main(int argc, char **argv)
 {
-	if (v != 2)
+	if (argc != 2)
 	{
-		std::cout << "Usage: " << strs[0] << " <input_file>" << std::endl;
+		std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
 		return (1);
 	}
+	try
+	{
+		BitcoinExchange	btc;
+		btc.processInput(argv[1]);
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+		return (1);
+	}
+	return (0);
 }
