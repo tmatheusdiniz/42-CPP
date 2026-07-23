@@ -6,6 +6,12 @@
 
 class RPN
 {
+	private:
+		std::stack<int>	_stack;
+
+		void	applyOperator(char op);
+		static bool	isOperator(char c);
+
 	public:
 		RPN();
 		RPN(const RPN& other);
@@ -13,12 +19,6 @@ class RPN
 		~RPN();
 
 		int	evaluate(const std::string& expression);
-
-	private:
-		std::stack<int>	_stack;
-
-		void	applyOperator(char op);
-		static bool	isOperator(char c);
 };
 
 #endif
