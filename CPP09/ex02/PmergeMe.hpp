@@ -7,15 +7,6 @@
 
 class PmergeMe
 {
-	public:
-		PmergeMe();
-		PmergeMe(const PmergeMe& other);
-		PmergeMe&	operator=(const PmergeMe& other);
-		~PmergeMe();
-
-		void	parseArguments(int argc, char** argv);
-		void	run();
-
 	private:
 		std::vector<int>	_vec;
 		std::deque<int>		_deque;
@@ -28,6 +19,15 @@ class PmergeMe
 		static int	parseInt(const std::string& token);
 		static void	printSequence(const std::string& label,
 						const std::vector<int>& v);
+
+	public:
+		PmergeMe();
+		PmergeMe(const PmergeMe& other);
+		PmergeMe&	operator=(const PmergeMe& other);
+		~PmergeMe();
+
+		void	parseArguments(int argc, char** argv);
+		void	run();
 };
 
 #endif
