@@ -13,14 +13,14 @@
 #include "AAnimal.hpp"
 #include <string>
 
-AAnimal::AAnimal() : type("")
+AAnimal::AAnimal() : _type("")
 {
 	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
 AAnimal::AAnimal(const AAnimal &src)
 {
-	this->type = src.type;
+	this->_type = src._type;
 	std::cout << "AAnimal copy constructor called" << std::endl;
 }
 
@@ -28,7 +28,7 @@ AAnimal &AAnimal::operator=(const AAnimal &src)
 {
 	if (this != &src)
 	{
-		this->type = src.type;
+		this->_type = src._type;
 	}
 	return (*this);
 }
@@ -40,5 +40,5 @@ AAnimal::~AAnimal()
 
 std::string AAnimal::getType() const 
 {
-    return (this->type);
+    return (this->_type);
 }

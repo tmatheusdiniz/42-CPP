@@ -13,12 +13,12 @@
 #include "Animal.hpp"
 #include <string>
 
-Animal::Animal() : type("")
+Animal::Animal() : _type("")
 {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(const std::string &type) : type(type)
+Animal::Animal(const std::string &type) : _type(type)
 {
 	std::cout << "Animal constructor called" << std::endl;
 }
@@ -27,7 +27,7 @@ Animal &Animal::operator=(const Animal &src)
 {
 	if (this != &src)
 	{
-		this->type = src.type;
+		this->_type = src._type;
 	}
 	return (*this);
 }
@@ -44,5 +44,5 @@ void Animal::makeSound() const
 
 std::string Animal::getType() const 
 {
-    return (this->type);
+    return (this->_type);
 }

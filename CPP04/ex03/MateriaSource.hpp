@@ -19,7 +19,7 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria* templates[4];
+		AMateria* _templates[4];
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource& src);

@@ -18,16 +18,16 @@
 #include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
 
-void print_separator(const std::string& title)
+void printSeparator(const std::string& title)
 {
 	std::cout << "\n========================================" << std::endl;
 	std::cout << "  " << title << std::endl;
 	std::cout << "========================================\n" << std::endl;
 }
 
-void test_basic_materia_creation()
+void testBasicMateriaCreation()
 {
-	print_separator("TEST 1: Basic Materia Creation");
+	printSeparator("TEST 1: Basic Materia Creation");
 	
 	Ice* ice = new Ice();
 	Cure* cure = new Cure();
@@ -39,9 +39,9 @@ void test_basic_materia_creation()
 	delete cure;
 }
 
-void test_materia_clone()
+void testMateriaClone()
 {
-	print_separator("TEST 2: Materia Clone");
+	printSeparator("TEST 2: Materia Clone");
 	
 	Ice* original = new Ice();
 	AMateria* cloned = original->clone();
@@ -54,9 +54,9 @@ void test_materia_clone()
 	delete cloned;
 }
 
-void test_character_creation()
+void testCharacterCreation()
 {
-	print_separator("TEST 3: Character Creation");
+	printSeparator("TEST 3: Character Creation");
 	
 	std::string name1 = "John";
 	std::string name2 = "Alice";
@@ -71,9 +71,9 @@ void test_character_creation()
 	delete alice;
 }
 
-void test_equip_and_use()
+void testEquipAndUse()
 {
-	print_separator("TEST 4: Equip and Use Materia");
+	printSeparator("TEST 4: Equip and Use Materia");
 	
 	std::string name = "Bob";
 	Character* bob = new Character(name);
@@ -100,9 +100,9 @@ void test_equip_and_use()
 	delete enemy;
 }
 
-void test_full_inventory()
+void testFullInventory()
 {
-	print_separator("TEST 5: Full Inventory");
+	printSeparator("TEST 5: Full Inventory");
 	
 	std::string name = "Warrior";
 	Character* warrior = new Character(name);
@@ -122,9 +122,9 @@ void test_full_inventory()
 	delete warrior;
 }
 
-void test_unequip()
+void testUnequip()
 {
-	print_separator("TEST 6: Unequip Materia");
+	printSeparator("TEST 6: Unequip Materia");
 	
 	std::string name = "Mage";
 	Character* mage = new Character(name);
@@ -150,9 +150,9 @@ void test_unequip()
 	delete target;
 }
 
-void test_materia_source()
+void testMateriaSource()
 {
-	print_separator("TEST 7: MateriaSource Learn and Create");
+	printSeparator("TEST 7: MateriaSource Learn and Create");
 	
 	IMateriaSource* src = new MateriaSource();
 	
@@ -179,9 +179,9 @@ void test_materia_source()
 	delete src;
 }
 
-void test_character_deep_copy()
+void testCharacterDeepCopy()
 {
-	print_separator("TEST 8: Character Deep Copy");
+	printSeparator("TEST 8: Character Deep Copy");
 	
 	std::string name1 = "Original";
 	Character* original = new Character(name1);
@@ -208,9 +208,9 @@ void test_character_deep_copy()
 	delete target;
 }
 
-void test_complete_scenario()
+void testCompleteScenario()
 {
-	print_separator("TEST 9: Complete Combat Scenario");
+	printSeparator("TEST 9: Complete Combat Scenario");
 	
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -247,9 +247,9 @@ void test_complete_scenario()
 	delete src;
 }
 
-void test_edge_cases()
+void testEdgeCases()
 {
-	print_separator("TEST 10: Edge Cases");
+	printSeparator("TEST 10: Edge Cases");
 	
 	std::string name = "Tester";
 	Character* tester = new Character(name);
@@ -278,17 +278,17 @@ int main()
 	std::cout << "║   MATERIA SYSTEM - COMPREHENSIVE TESTS ║" << std::endl;
 	std::cout << "╚════════════════════════════════════════╝" << std::endl;
 	
-	test_basic_materia_creation();
-	test_materia_clone();
-	test_character_creation();
-	test_equip_and_use();
-	test_full_inventory();
-	test_unequip();
-	test_materia_source();
-	test_character_deep_copy();
-	test_complete_scenario();
-	test_edge_cases();
+	testBasicMateriaCreation();
+	testMateriaClone();
+	testCharacterCreation();
+	testEquipAndUse();
+	testFullInventory();
+	testUnequip();
+	testMateriaSource();
+	testCharacterDeepCopy();
+	testCompleteScenario();
+	testEdgeCases();
 	
-	print_separator("ALL TESTS COMPLETED");
+	printSeparator("ALL TESTS COMPLETED");
 	return (0);
 }

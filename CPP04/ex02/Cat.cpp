@@ -14,14 +14,14 @@
 
 Cat::Cat() : AAnimal()
 {
-	this->type = "Cat";
-	this->brain = new Brain();
+	this->_type = "Cat";
+	this->_brain = new Brain();
 	std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &src) : AAnimal(src)
 {
-	this->brain = new Brain(*src.brain);
+	this->_brain = new Brain(*src._brain);
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
@@ -31,15 +31,15 @@ Cat &Cat::operator = (const Cat &src)
 	if (this != &src)
 	{
 		AAnimal::operator=(src);
-		delete (this->brain);
-		this->brain = new Brain(*src.brain);
+		delete (this->_brain);
+		this->_brain = new Brain(*src._brain);
 	}
 	return (*this);
 }
 
 Cat::~Cat() 
 {
-	delete this->brain;
+	delete this->_brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
 

@@ -14,13 +14,13 @@
 
 Dog::Dog() : Animal("Dog")
 {
-	this->brain = new Brain();
+	this->_brain = new Brain();
 	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &src) : Animal(src)
 {
-	this->brain = new Brain(*src.brain);
+	this->_brain = new Brain(*src._brain);
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
@@ -30,15 +30,15 @@ Dog &Dog::operator = (const Dog &src)
 	if (this != &src)
 	{
 		Animal::operator=(src);
-		delete (this->brain);
-		this->brain = new Brain(*src.brain);
+		delete (this->_brain);
+		this->_brain = new Brain(*src._brain);
 	}
 	return (*this);
 }
 
 Dog::~Dog() 
 {
-	delete this->brain;
+	delete this->_brain;
     std::cout << "Dog destructor called" << std::endl;
 }
 

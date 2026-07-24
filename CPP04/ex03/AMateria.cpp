@@ -12,12 +12,12 @@
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) : type(type)
+AMateria::AMateria(std::string const & type) : _type(type)
 {
 
 }
 
-AMateria::AMateria(const AMateria& src) : type(src.type)
+AMateria::AMateria(const AMateria& src) : _type(src._type)
 {
 
 }
@@ -26,7 +26,7 @@ AMateria& AMateria::operator=(const AMateria& src)
 {
 	if (this != &src)
 	{
-		this->type= src.type;
+		this->_type= src._type;
 	}
 	return (*this);
 }
@@ -38,7 +38,7 @@ AMateria::~AMateria()
 
 std::string const & AMateria::getType() const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void AMateria::use(ICharacter &target)

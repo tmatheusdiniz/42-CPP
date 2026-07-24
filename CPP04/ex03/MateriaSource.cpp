@@ -18,7 +18,7 @@ MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		this->templates[i]= NULL;
+		this->_templates[i]= NULL;
 	}
 }
 
@@ -26,10 +26,10 @@ MateriaSource::MateriaSource(const MateriaSource& src)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (src.templates[i])
-			this->templates[i]= src.templates[i]->clone();
+		if (src._templates[i])
+			this->_templates[i]= src._templates[i]->clone();
 		else
-			this->templates[i] = NULL;
+			this->_templates[i] = NULL;
 	}
 }
 
@@ -39,16 +39,16 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& src)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (this->templates[i])
+			if (this->_templates[i])
 			{
-				delete (this->templates[i]);
-				this->templates[i] = NULL;
+				delete (this->_templates[i]);
+				this->_templates[i] = NULL;
 			}
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			if (src.templates[i])
-				this->templates[i] = src.templates[i]->clone();
+			if (src._templates[i])
+				this->_templates[i] = src._templates[i]->clone();
 		}
 	}
 	return (*this);
@@ -58,10 +58,10 @@ MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->templates[i])
+		if (this->_templates[i])
 		{
-			delete (this->templates[i]);
-			this->templates[i] = NULL;
+			delete (this->_templates[i]);
+			this->_templates[i] = NULL;
 		}
 	}
 }
@@ -72,9 +72,9 @@ void MateriaSource::learnMateria(AMateria* m)
 		return ;
 	for (int i = 0; i < 4; i++)
 	{
-		if (!this->templates[i])
+		if (!this->_templates[i])
 		{
-			this->templates[i] = m;
+			this->_templates[i] = m;
 			return ;
 		}
 	}
@@ -84,9 +84,9 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->templates[i] && this->templates[i]->getType() == type)
+		if (this->_templates[i] && this->_templates[i]->getType() == type)
 		{
-			return this->templates[i]->clone();
+			return this->_templates[i]->clone();
 		}
 	}
 	return (NULL);
