@@ -17,12 +17,12 @@ Dog::Dog() : Animal("Dog")
 	std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &src) : Animal(src)
+Dog::Dog(const Dog& src) : Animal(src)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
-Dog &Dog::operator = (const Dog &src)
+Dog& Dog::operator = (const Dog& src)
 {
 	std::cout << "Dog assignation operator called" << std::endl;
 	if (this != &src)

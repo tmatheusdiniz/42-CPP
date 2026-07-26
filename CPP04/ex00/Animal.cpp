@@ -18,12 +18,12 @@ Animal::Animal() : _type("")
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(const std::string &type) : _type(type)
+Animal::Animal(const std::string& type) : _type(type)
 {
 	std::cout << "Animal constructor called" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &src)
+Animal& Animal::operator=(const Animal& src)
 {
 	if (this != &src)
 	{
