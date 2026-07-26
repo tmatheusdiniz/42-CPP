@@ -17,12 +17,12 @@ WrongCat::WrongCat() : WrongAnimal("Cat")
 	std::cout << "WrongCat constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &src) : WrongAnimal(src)
+WrongCat::WrongCat(const WrongCat& src) : WrongAnimal(src)
 {
 	std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
-WrongCat &WrongCat::operator = (const WrongCat &src)
+WrongCat& WrongCat::operator = (const WrongCat& src)
 {
 	std::cout << "WrongCat assignation operator called" << std::endl;
 	if (this != &src)

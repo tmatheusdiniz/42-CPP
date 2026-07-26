@@ -12,7 +12,7 @@
 
 #include "Bureaucrat.hpp"
 
-int main(int v, char **str)
+int main(int v, char** str)
 {
 	if (v <= 2)
 	{
@@ -32,11 +32,11 @@ int main(int v, char **str)
 			b = a;
 			std::cout << "Second Bureaucrat grade: " << b.getGrade() << std::endl;
 		}
-	} catch (const Bureaucrat::GradeTooHighException &e)
+	} catch (const Bureaucrat::GradeTooHighException& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	catch (const Bureaucrat::GradeTooLowException &e)
+	catch (const Bureaucrat::GradeTooLowException& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

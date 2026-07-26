@@ -7,18 +7,18 @@
 class RPN
 {
 	private:
-		std::stack<int>	_stack;
+		std::stack<int> _stack;
 
-		void	applyOperator(char op);
-		static bool	isOperator(char c);
+		void applyOperator(char op);
+		static bool isOperator(char c);
 
 	public:
 		RPN();
 		RPN(const RPN& other);
-		RPN&	operator=(const RPN& other);
+		RPN& operator=(const RPN& other);
 		~RPN();
 
-		int	evaluate(const std::string& expression);
+		int evaluate(const std::string& expression);
 };
 
 #endif

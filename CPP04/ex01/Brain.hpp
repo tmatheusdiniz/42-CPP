@@ -22,11 +22,11 @@ class Brain
 		std::string _ideas[100];
 	public:
 		Brain();
-		Brain(const Brain &src);
-		Brain &operator = (const Brain &src);
+		Brain(const Brain& src);
+		Brain& operator = (const Brain& src);
 		~Brain();
 		std::string getIdea(int index) const;
-		void setIdea(int index, const std::string &ideia);
+		void setIdea(int index, const std::string& ideia);
 };
 
 #endif

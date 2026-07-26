@@ -14,7 +14,7 @@
 #include <string>
 #include "HandleFile.hpp"
 
-int main(int v, char **str)
+int main(int v, char** str)
 {
 	if (v != 4)
 		return ((std::cout 

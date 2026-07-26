@@ -19,10 +19,10 @@ class Ice : public AMateria
 {
 	public:
 		Ice();
-		Ice(const Ice &src);
-		Ice &operator = (const Ice &src);
+		Ice(const Ice& src);
+		Ice& operator = (const Ice& src);
 		~Ice();
-		virtual AMateria *clone() const;
+		virtual AMateria* clone() const;
 		virtual void use(ICharacter& target);
 };
 

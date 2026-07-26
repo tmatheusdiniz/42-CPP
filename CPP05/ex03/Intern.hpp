@@ -20,13 +20,13 @@ class Intern
 {
 	public:
 		Intern();
-		Intern(const Intern &src);
+		Intern(const Intern& src);
 		~Intern();
-		Intern &operator = (const Intern &src);
-		AForm *makeForm(std::string formName, std::string target);
+		Intern& operator = (const Intern& src);
+		AForm* makeForm(std::string formName, std::string target);
 		class FormNotExist : public std::exception
 		{
-			virtual const char *what() const throw();
+			virtual const char* what() const throw();
 		};
 };
 

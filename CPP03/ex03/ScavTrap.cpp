@@ -20,7 +20,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
 	_health = 100;
 	_energy = 50;
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 	std::cout << "ScavTrap " << _name << " constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
@@ -38,7 +38,7 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap " << _name << " destructor called" << std::endl;
 }
 
-ScavTrap &ScavTrap::operator = (const ScavTrap &other)
+ScavTrap& ScavTrap::operator = (const ScavTrap& other)
 {
 	ClapTrap::operator=(other);
 	std::cout << "ScavTrap assignment operator called" << std::endl;
@@ -61,7 +61,7 @@ void ScavTrap::takeDamage(unsigned int amount)
 		<< " damage! HP: " << _health << std::endl;
 }
 
-void ScavTrap::attack(const std::string &target)
+void ScavTrap::attack(const std::string& target)
 {
 	if (this->_health > 0 && this->_energy > 0)
 	{

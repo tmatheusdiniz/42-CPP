@@ -5,10 +5,10 @@
 #include <iostream>
 #include <stdexcept>
 
-static std::string	trim(const std::string& s)
+static std::string trim(const std::string& s)
 {
-	const std::string	spaces = " \t\r\n\v\f";
-	std::size_t	first = s.find_first_not_of(spaces);
+	const std::string spaces = " \t\r\n\v\f";
+	std::size_t first = s.find_first_not_of(spaces);
 
 	if (first == std::string::npos)
 		return ("");
@@ -38,12 +38,12 @@ BitcoinExchange::~BitcoinExchange() {}
 
 void BitcoinExchange::loadDatabase(const std::string& filename)
 {
-	std::ifstream	file(filename.c_str());
+	std::ifstream file(filename.c_str());
 
 	if (!file.is_open())
 		throw std::runtime_error("Failed to open database file");
 	this->_database.clear();
-	std::string	line;
+	std::string line;
 	while (std::getline(file, line))
 	{
 		line = trim(line);
@@ -54,9 +54,9 @@ void BitcoinExchange::loadDatabase(const std::string& filename)
 		std::size_t comma = line.find(',');
 		if (comma == std::string::npos)
 			throw std::runtime_error("Invalid database line: " + line);
-		std::string	date = trim(line.substr(0, comma));
-		std::string	rate = trim(line.substr(comma + 1));
-		double	value;
+		std::string date = trim(line.substr(0, comma));
+		std::string rate = trim(line.substr(comma + 1));
+		double value;
 		if (!isValidDate(date))
 			throw std::runtime_error("Invalid date in database: " + date);
 		if (!parseValue(rate, value) || value < 0)
@@ -85,13 +85,13 @@ double BitcoinExchange::getRateForDate(const std::string& date) const
 
 void BitcoinExchange::processInput(const std::string& filename) const
 {
-	std::ifstream	file(filename.c_str());
+	std::ifstream file(filename.c_str());
 
 	if (!file.is_open())
 		throw std::runtime_error("could not open file.");
 
-	std::string	line;
-	bool		first = true;
+	std::string line;
+	bool first = true;
 	while (std::getline(file, line))
 	{
 		line = trim(line);
@@ -110,14 +110,14 @@ void BitcoinExchange::processInput(const std::string& filename) const
 			std::cout << "Error: bad input => " << line << std::endl;
 			continue;
 		}
-		std::string	date = trim(line.substr(0, pipe));
-		std::string	rawValue = trim(line.substr(pipe + 1));
+		std::string date = trim(line.substr(0, pipe));
+		std::string rawValue = trim(line.substr(pipe + 1));
 		if (!isValidDate(date))
 		{
 			std::cout << "Error: bad input => " << date << std::endl;
 			continue;
 		}
-		double	value;
+		double value;
 		if (!parseValue(rawValue, value))
 		{
 			std::cout << "Error: bad input => " << rawValue << std::endl;
@@ -135,7 +135,7 @@ void BitcoinExchange::processInput(const std::string& filename) const
 		}
 		try
 		{
-			double	rate = this->getRateForDate(date);
+			double rate = this->getRateForDate(date);
 			std::cout << date << " => " << value << " = "
 				<< value * rate << std::endl;
 		}
@@ -151,14 +151,14 @@ bool BitcoinExchange::parseValue(const std::string& s, double& out)
 	if (s.empty())
 		return (false);
 
-	std::size_t	i = 0;
+	std::size_t i = 0;
 	if (s[i] == '+' || s[i] == '-')
 		++i;
 	if (i == s.size())
 		return (false);
 
-	bool	dot = false;
-	bool	digit = false;
+	bool dot = false;
+	bool digit = false;
 	for (; i < s.size(); ++i)
 	{
 		if (s[i] == '.')
@@ -192,18 +192,18 @@ bool BitcoinExchange::isValidDate(const std::string& date)
 			return (false);
 	}
 
-	int	year = std::atoi(date.substr(0, 4).c_str());
-	int	month = std::atoi(date.substr(5, 2).c_str());
-	int	day = std::atoi(date.substr(8, 2).c_str());
+	int year = std::atoi(date.substr(0, 4).c_str());
+	int month = std::atoi(date.substr(5, 2).c_str());
+	int day = std::atoi(date.substr(8, 2).c_str());
 
 	if (month < 1 || month > 12)
 		return (false);
 	if (day < 1)
 		return (false);
 
-	static const int	mdays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	int					maxDay = mdays[month - 1];
-	bool				leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+	static const int mdays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	int maxDay = mdays[month - 1];
+	bool leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 
 	if (month == 2 && leap)
 		maxDay = 29;

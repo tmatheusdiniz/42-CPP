@@ -20,17 +20,17 @@ class Character : public ICharacter
 {
 	private:
 		std::string _name;
-		AMateria *_inventory[4];
+		AMateria* _inventory[4];
 	// i cannot create an array such as AMateria inventory[4], because AMateria is an abstract class. It has not complete object layout. Pointer to pointer works because i'm just storing pointers and not the object itself.
 	public:
-		Character(std::string &name);
-		Character(Character &src);
-		Character &operator = (const Character &src);
+		Character(std::string& name);
+		Character(Character& src);
+		Character& operator = (const Character& src);
 		virtual ~Character();
 		virtual std::string const & getName() const;
-		virtual void equip(AMateria *m);
+		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
-		virtual void use(int idx, ICharacter &target);
+		virtual void use(int idx, ICharacter& target);
 };
 
 #endif

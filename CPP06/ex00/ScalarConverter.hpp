@@ -20,22 +20,22 @@ class ScalarConverter
 {
 	private:
 		ScalarConverter();
-		ScalarConverter(const ScalarConverter &other);
-		ScalarConverter &operator=(const ScalarConverter &other);
+		ScalarConverter(const ScalarConverter& other);
+		ScalarConverter& operator=(const ScalarConverter& other);
 		~ScalarConverter();
 
-		static bool isChar(const std::string &input);
-		static bool isInt(const std::string &input);
-		static bool isFloat(const std::string &input);
-		static bool isDouble(const std::string &input);
-		static bool isSpecial(const std::string &input);
+		static bool isChar(const std::string& input);
+		static bool isInt(const std::string& input);
+		static bool isFloat(const std::string& input);
+		static bool isDouble(const std::string& input);
+		static bool isSpecial(const std::string& input);
 		static void convertFromChar(char input);
 		static void convertFromInt(int input);
 		static void convertFromFloat(float input);
 		static void convertFromDouble(double input);
-		static void convertFromSpecial(const std::string &input);
+		static void convertFromSpecial(const std::string& input);
 	public:
-		static void convert(const std::string &input);
+		static void convert(const std::string& input);
 };
 
 #endif

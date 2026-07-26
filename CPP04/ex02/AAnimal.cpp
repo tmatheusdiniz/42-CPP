@@ -18,13 +18,13 @@ AAnimal::AAnimal() : _type("")
 	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal &src)
+AAnimal::AAnimal(const AAnimal& src)
 {
 	this->_type = src._type;
 	std::cout << "AAnimal copy constructor called" << std::endl;
 }
 
-AAnimal &AAnimal::operator=(const AAnimal &src)
+AAnimal& AAnimal::operator=(const AAnimal& src)
 {
 	if (this != &src)
 	{

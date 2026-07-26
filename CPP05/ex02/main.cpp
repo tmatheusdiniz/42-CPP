@@ -15,7 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int main(int v, char **str)
+int main(int v, char** str)
 {
 	std::srand(std::time(NULL));
 	if (v <= 2)
@@ -39,7 +39,7 @@ int main(int v, char **str)
 		Matheus.signForm(formP);
 		king.executeForm(formP);
 	}
-	catch (const std::exception &e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

@@ -19,13 +19,13 @@ Cat::Cat() : AAnimal()
 	std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &src) : AAnimal(src)
+Cat::Cat(const Cat& src) : AAnimal(src)
 {
 	this->_brain = new Brain(*src._brain);
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
-Cat &Cat::operator = (const Cat &src)
+Cat& Cat::operator = (const Cat& src)
 {
 	std::cout << "Cat assignation operator called" << std::endl;
 	if (this != &src)

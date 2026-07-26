@@ -20,11 +20,11 @@
 class Cat : public AAnimal
 {
 	private:
-		Brain *_brain;
+		Brain* _brain;
 	public:
 		Cat();
-		Cat(const Cat &src);
-		Cat &operator = (const Cat &src);
+		Cat(const Cat& src);
+		Cat& operator = (const Cat& src);
 		~Cat();
 		void makeSound() const;
 };

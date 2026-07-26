@@ -12,13 +12,13 @@
 
 #include "HumanB.hpp"
 
-void HumanB::setWeapon(Weapon *w)
+void HumanB::setWeapon(Weapon* w)
 {
 	if (w)
 		this->_weapon = w;
 }
 
-HumanB::HumanB(const std::string &_name)
+HumanB::HumanB(const std::string& _name)
 {
 	this->_name = _name;
 }

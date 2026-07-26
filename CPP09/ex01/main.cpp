@@ -31,7 +31,7 @@ bool hasOnlyValidCharacters(const std::string& expression)
 	return (true);
 }
 
-int main(int c, char **p)
+int main(int c, char** p)
 {
 	if (c != 2
 		|| static_cast<std::string>(p[1]).empty()

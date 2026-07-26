@@ -20,7 +20,7 @@ FragTrap::FragTrap() : ClapTrap()
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
 	_health = 100;
 	_energy = 100;
@@ -28,7 +28,7 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 	std::cout << "FragTrap " << _name << " constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 }
@@ -38,7 +38,7 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap " << _name << " destructor called" << std::endl;
 }
 
-FragTrap &FragTrap::operator = (const FragTrap &other)
+FragTrap& FragTrap::operator = (const FragTrap& other)
 {
 	ClapTrap::operator=(other);
 	std::cout << "FragTrap assignment operator called" << std::endl;
@@ -61,7 +61,7 @@ void FragTrap::takeDamage(unsigned int amount)
 		<< " damage! HP: " << _health << std::endl;
 }
 
-void FragTrap::attack(const std::string &target)
+void FragTrap::attack(const std::string& target)
 {
 	if (this->_health > 0 && this->_energy > 0)
 	{

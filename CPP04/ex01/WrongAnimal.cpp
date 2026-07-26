@@ -17,12 +17,12 @@ WrongAnimal::WrongAnimal() : _type("")
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const std::string &type) : _type(type)
+WrongAnimal::WrongAnimal(const std::string& type) : _type(type)
 {
 	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
-WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src)
 {
 	if (this != &src)
 	{

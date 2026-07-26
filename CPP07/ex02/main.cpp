@@ -36,7 +36,7 @@ int main()
 	{
 		std::cout << "exception out of bounds trigger: " << numbers[5] << std::endl;
 	}
-	catch (std::exception &e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

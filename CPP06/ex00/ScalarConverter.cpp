@@ -11,12 +11,12 @@ ScalarConverter::ScalarConverter()
 	
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &other)
+ScalarConverter::ScalarConverter(const ScalarConverter& other)
 {
 	(void)other;
 }
 
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other)
 {
 	(void)other;
 	return *this;
@@ -71,7 +71,7 @@ void ScalarConverter::convert(const std::string& input)
 	}
 }
 
-bool ScalarConverter::isChar(const std::string &input)
+bool ScalarConverter::isChar(const std::string& input)
 {
 	if (input.length() == 1 && !isdigit(static_cast<unsigned char>(input[0])))
 		return true;
@@ -81,7 +81,7 @@ bool ScalarConverter::isChar(const std::string &input)
 	return false;
 }
 
-bool ScalarConverter::isInt(const std::string &input)
+bool ScalarConverter::isInt(const std::string& input)
 {
 	if (input.empty())
 		return (false);
@@ -91,7 +91,7 @@ bool ScalarConverter::isInt(const std::string &input)
 	return ((strm >> val) && !(strm >> left));
 }
 
-bool ScalarConverter::isDouble(const std::string &input)
+bool ScalarConverter::isDouble(const std::string& input)
 {
 	if (input.empty())
 		return (false);
@@ -102,7 +102,7 @@ bool ScalarConverter::isDouble(const std::string &input)
 			&& input.find('.') != std::string::npos);
 }
 
-bool ScalarConverter::isFloat(const std::string &input)
+bool ScalarConverter::isFloat(const std::string& input)
 {
 	if (input.empty())
 		return (false);
@@ -194,7 +194,7 @@ void ScalarConverter::convertFromDouble(double input)
 }
 
 
-void ScalarConverter::convertFromSpecial(const std::string &input)
+void ScalarConverter::convertFromSpecial(const std::string& input)
 {
 	std::cout << "char: impossible" << std::endl;
 

@@ -14,13 +14,13 @@ class BitcoinExchange
 		BitcoinExchange& operator=(const BitcoinExchange& other);
 		~BitcoinExchange();
 
-		void	loadDatabase(const std::string& filename);
-		void	processInput(const std::string& filename) const;
+		void loadDatabase(const std::string& filename);
+		void processInput(const std::string& filename) const;
 
-		double	getRateForDate(const std::string& date) const;
+		double getRateForDate(const std::string& date) const;
 
-		static bool	isValidDate(const std::string& date);
-		static bool	parseValue(const std::string& s, double& out);
+		static bool isValidDate(const std::string& date);
+		static bool parseValue(const std::string& s, double& out);
 };
 
 #endif

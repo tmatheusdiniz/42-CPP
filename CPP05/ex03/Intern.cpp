@@ -21,7 +21,7 @@ Intern::Intern()
 	std::cout << "Intern default constructor called" << std::endl;
 }
 
-Intern::Intern(const Intern &src)
+Intern::Intern(const Intern& src)
 {
 	(void)src;
 	std::cout << "Intern copy constructor called" << std::endl;
@@ -32,14 +32,14 @@ Intern::~Intern()
 	std::cout << "Intern destructor called" << std::endl;
 }
 
-Intern &Intern::operator=(const Intern &src)
+Intern& Intern::operator=(const Intern& src)
 {
 	(void)src;
 	std::cout << "Intern assignment operator called" << std:: endl;
 	return (*this);
 }
 
-AForm *Intern::makeForm(std::string formName, std::string target)
+AForm* Intern::makeForm(std::string formName, std::string target)
 {
 	int index;
 	std::string forms[3] = 
@@ -63,7 +63,7 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 	}
 }
 
-const char *Intern::FormNotExist::what() const throw()
+const char* Intern::FormNotExist::what() const throw()
 {
 	return ("Form doesn't exist!");
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreinald <mreinald@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,8 +22,8 @@ class AAnimal
 		std::string _type;
 	public:
 		AAnimal();
-		AAnimal(const AAnimal &src);
-		AAnimal &operator = (const AAnimal &src);
+		AAnimal(const AAnimal& src);
+		AAnimal& operator = (const AAnimal& src);
 		virtual ~AAnimal();
 		virtual void makeSound() const = 0;
 		std::string getType() const;

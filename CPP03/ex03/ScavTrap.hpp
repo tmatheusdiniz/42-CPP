@@ -22,11 +22,11 @@ class ScavTrap: virtual public ClapTrap
 		bool _guardingGate;
 	public:
 		ScavTrap();
-		ScavTrap(const std::string &name);
-		ScavTrap(const ScavTrap &other);
+		ScavTrap(const std::string& name);
+		ScavTrap(const ScavTrap& other);
 		~ScavTrap();
-		ScavTrap &operator = (const ScavTrap &other);
-		void attack(const std::string &target);
+		ScavTrap& operator = (const ScavTrap& other);
+		void attack(const std::string& target);
 		void guardGate();
 		void setGuardGate(bool sign);
 		//overriding for redefination

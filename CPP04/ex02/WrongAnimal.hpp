@@ -22,8 +22,8 @@ class WrongAnimal
 		std::string _type;
 	public:
 		WrongAnimal();
-		WrongAnimal(const WrongAnimal &src);
-		WrongAnimal &operator = (const WrongAnimal &src);
+		WrongAnimal(const WrongAnimal& src);
+		WrongAnimal& operator = (const WrongAnimal& src);
 		virtual ~WrongAnimal();
 		virtual void makeSound() const;
 		std::string getType() const;

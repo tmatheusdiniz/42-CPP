@@ -14,7 +14,7 @@ int main()
 	try
 	{
 		std::cout << "throwing: " << easyfind(values, 3) << std::endl;
-	} catch (std::runtime_error &e)
+	} catch (std::runtime_error& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

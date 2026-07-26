@@ -12,7 +12,7 @@
 
 #include "Bureaucrat.hpp"
 
-int main(int v, char **str)
+int main(int v, char** str)
 {
 	if (v <= 5)
 	{
@@ -25,7 +25,7 @@ int main(int v, char **str)
 		Bureaucrat Matheus(str[1], std::atoi(str[2]));
 		Matheus.signForm(contract);
 	}
-	catch (const std::exception &e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

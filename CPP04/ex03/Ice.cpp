@@ -17,12 +17,12 @@ Ice::Ice() : AMateria("Ice")
 	std::cout << "Ice constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &src) : AMateria(src)
+Ice::Ice(const Ice& src) : AMateria(src)
 {
 	std::cout << "Ice copy constructor called" << std::endl;
 }
 
-Ice &Ice::operator=(const Ice &src)
+Ice& Ice::operator=(const Ice& src)
 {
 	AMateria::operator=(src);
 	return (*this);
@@ -34,7 +34,7 @@ Ice::~Ice()
 
 }
 
-AMateria *Ice::clone() const
+AMateria* Ice::clone() const
 {
 	return (new Ice(*this));
 }

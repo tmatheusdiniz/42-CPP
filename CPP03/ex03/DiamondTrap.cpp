@@ -22,7 +22,7 @@ DiamondTrap::DiamondTrap() : ClapTrap("Default_from_clap"), ScavTrap(), FragTrap
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
+DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
 {
 	_health = FragTrap::_health;
 	_energy = ScavTrap::_health;
@@ -31,7 +31,7 @@ DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"
 	std::cout << "DiamondTrap " << _name << " constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) 
+DiamondTrap::DiamondTrap(const DiamondTrap& other) 
     : ClapTrap(other), ScavTrap(other), FragTrap(other), _name(other._name)
 {
     std::cout << "DiamondTrap copy constructor called" << std::endl;
@@ -42,7 +42,7 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamondTrap " << _name << " destructor called" << std::endl;
 }
 
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 {
 	if (this != &other)
 	{
@@ -53,7 +53,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 	return (*this);
 }
 
-void DiamondTrap::attack(const std::string &target)
+void DiamondTrap::attack(const std::string& target)
 {
 	ScavTrap::attack(target);
 }

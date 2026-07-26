@@ -18,12 +18,12 @@ Cure::Cure() : AMateria("Cure")
 	std::cout << "Cure constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure &src) : AMateria(src)
+Cure::Cure(const Cure& src) : AMateria(src)
 {
 	std::cout << "Cure copy constructor called" << std::endl;
 }
 
-Cure &Cure::operator=(const Cure &src)
+Cure& Cure::operator=(const Cure& src)
 {
 	AMateria::operator=(src);
 	return (*this);
@@ -35,7 +35,7 @@ Cure::~Cure()
 
 }
 
-AMateria *Cure::clone() const
+AMateria* Cure::clone() const
 {
 	return (new Cure(*this));
 }

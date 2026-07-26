@@ -17,7 +17,7 @@ int main()
 	{
 		sp.addNumber(7);
 	}
-	catch (std::runtime_error &e)
+	catch (std::runtime_error& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -28,7 +28,7 @@ int main()
 	{
 		empty.shortestSpan();
 	}
-	catch (std::runtime_error &e)
+	catch (std::runtime_error& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

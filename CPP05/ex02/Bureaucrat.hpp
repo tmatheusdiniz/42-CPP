@@ -28,15 +28,15 @@ class Bureaucrat
 	public:
 		Bureaucrat();
 		Bureaucrat(const std::string name, int16_t grade);
-		Bureaucrat(const Bureaucrat &src);
+		Bureaucrat(const Bureaucrat& src);
 		~Bureaucrat();
-		Bureaucrat &operator = (const Bureaucrat &src);
+		Bureaucrat& operator = (const Bureaucrat& src);
 
 		std::string getName() const;
 		int16_t getGrade() const;
 		void incrementBureaucratLevel();
 		void decrementBureaucratLevel();
-		void signForm(AForm &form) const;
+		void signForm(AForm& form) const;
 		void executeForm(AForm const & form);
 		class GradeTooHighException : public std::exception
 		{

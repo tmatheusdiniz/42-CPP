@@ -12,7 +12,7 @@
 
 #include "Harl.hpp"
 
-int main (int v, char **str)
+int main (int v, char** str)
 {
 	(void)v;
 	Harl harl;

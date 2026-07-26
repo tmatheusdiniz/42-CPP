@@ -18,7 +18,7 @@
 
 int main()
 {
-	const AAnimal *cat = new Cat();
+	const AAnimal* cat = new Cat();
 	cat->makeSound();
 	Cat cat2;
 	cat2.makeSound();

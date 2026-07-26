@@ -26,13 +26,13 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& src)
 	: _target(src._target)
 {
 	std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &src)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& src)
 {
 	if (this != &src)
 	{

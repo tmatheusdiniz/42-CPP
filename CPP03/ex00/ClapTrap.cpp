@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(const std::string name)
 	std::cout << "ClapTrap " << _name << "constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &other)
+ClapTrap::ClapTrap(const ClapTrap& other)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = other;
@@ -37,7 +37,7 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator = (const ClapTrap &other)
+ClapTrap& ClapTrap::operator = (const ClapTrap& other)
 {
 	if (this != &other)
 	{
@@ -49,7 +49,7 @@ ClapTrap &ClapTrap::operator = (const ClapTrap &other)
 	return (*this);
 }
 
-void ClapTrap::attack(const std::string &target)
+void ClapTrap::attack(const std::string& target)
 {
 	if (this->_health > 0 && this->_energy > 0)
 	{

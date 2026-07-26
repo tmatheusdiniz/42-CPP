@@ -1,7 +1,7 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
 	if (argc != 2)
 	{
@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	}
 	try
 	{
-		BitcoinExchange	btc;
+		BitcoinExchange btc;
 		btc.processInput(argv[1]);
 	}
 	catch (const std::exception& e)

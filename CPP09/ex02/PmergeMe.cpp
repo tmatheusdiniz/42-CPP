@@ -14,7 +14,7 @@ PmergeMe::PmergeMe(const PmergeMe& other)
 {
 }
 
-PmergeMe&	PmergeMe::operator=(const PmergeMe& other)
+PmergeMe& PmergeMe::operator=(const PmergeMe& other)
 {
 	if (this != &other)
 	{
@@ -28,7 +28,7 @@ PmergeMe::~PmergeMe()
 {
 }
 
-int	PmergeMe::parseInt(const std::string& token)
+int PmergeMe::parseInt(const std::string& token)
 {
 	if (token.empty())
 		throw std::invalid_argument("Error");
@@ -39,7 +39,7 @@ int	PmergeMe::parseInt(const std::string& token)
 			throw std::invalid_argument("Error");
 	}
 
-	long	value = 0;
+	long value = 0;
 	for (std::string::size_type i = 0; i < token.size(); ++i)
 	{
 		value = value * 10 + (token[i] - '0');
@@ -53,19 +53,19 @@ int	PmergeMe::parseInt(const std::string& token)
 	return (static_cast<int>(value));
 }
 
-void	PmergeMe::parseArguments(int argc, char** argv)
+void PmergeMe::parseArguments(int argc, char** argv)
 {
 	if (argc < 2)
 		throw std::invalid_argument("Error");
 
 	for (int i = 1; i < argc; ++i)
 	{
-		std::istringstream	iss(argv[i]);
-		std::string			token;
+		std::istringstream iss(argv[i]);
+		std::string token;
 
 		while (iss >> token)
 		{
-			int	value = parseInt(token);
+			int value = parseInt(token);
 			_vec.push_back(value);
 			_deque.push_back(value);
 		}

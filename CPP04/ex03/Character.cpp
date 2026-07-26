@@ -12,7 +12,7 @@
 
 #include "Character.hpp"
 
-Character::Character(std::string &name) : _name(name)
+Character::Character(std::string& name) : _name(name)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -20,7 +20,7 @@ Character::Character(std::string &name) : _name(name)
 	}
 }
 
-Character::Character(Character &src) : _name(src._name)
+Character::Character(Character& src) : _name(src._name)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -31,7 +31,7 @@ Character::Character(Character &src) : _name(src._name)
 	}
 }
 
-Character &Character::operator = (const Character &src)
+Character& Character::operator = (const Character& src)
 {
 	if (this != &src)
 	{
@@ -65,7 +65,7 @@ std::string const & Character::getName() const
 	return (this->_name);
 }
 
-void Character::equip(AMateria *m)
+void Character::equip(AMateria* m)
 {
 	if (!m)
 		return ;

@@ -22,11 +22,11 @@ class FragTrap: virtual public ClapTrap
 		bool _highFives;
 	public:
 		FragTrap();
-		FragTrap(const std::string &name);
-		FragTrap(const FragTrap &other);
+		FragTrap(const std::string& name);
+		FragTrap(const FragTrap& other);
 		~FragTrap();
-		FragTrap &operator = (const FragTrap &other);
-		void attack(const std::string &target);
+		FragTrap& operator = (const FragTrap& other);
+		void attack(const std::string& target);
 		void highFivesGuys(void);
 		void setHighFivesGuys(bool sign);
 		void takeDamage(unsigned int amount);

@@ -17,7 +17,7 @@
 #include "Intern.hpp"
 #include <atomic>
 
-int main(int v, char **str)
+int main(int v, char** str)
 {
 	std::srand(std::time(NULL));
 	if (v <= 2)
@@ -27,7 +27,7 @@ int main(int v, char **str)
 	}
 	try
 	{
-		AForm *test[3];
+		AForm* test[3];
 		Intern poorGuy;
 		Bureaucrat sirGrey(str[1], std::atoi(str[2]));
 		test[0] = poorGuy.makeForm("robotomy request", "index 0");
@@ -35,7 +35,7 @@ int main(int v, char **str)
 		test[2] = poorGuy.makeForm("presidential request", "index 2");
 		std::cout << test[0]->getGradeToAssign() << std::endl;
 	}
-	catch (const std::exception &e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

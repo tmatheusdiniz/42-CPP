@@ -14,7 +14,7 @@
 #include "Contact.hpp"
 #include <string>
 
-void	printMenu()
+void printMenu()
 {
 	std::cout << "\n";
 	std::cout << "=====================================\n";
