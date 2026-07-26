@@ -33,11 +33,11 @@ class Contact
 		std::string getDarkestSecret() const;
 		std::string getPhoneNumber() const;
 		// Setters
-		void setFiritsName(const std::string &firstName);
-		void setLastName(const std::string &lastName);
-		void setNickName(const std::string &nickName);
-		void setDarkestSecret(const std::string &darkestSecret);
-		void setPhoneNumber(const std::string &phoneNumber);
+		void setFiritsName(const std::string& firstName);
+		void setLastName(const std::string& lastName);
+		void setNickName(const std::string& nickName);
+		void setDarkestSecret(const std::string& darkestSecret);
+		void setPhoneNumber(const std::string& phoneNumber);
 };
 
 #endif

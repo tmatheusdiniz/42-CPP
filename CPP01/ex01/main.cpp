@@ -15,7 +15,7 @@
 int main()
 {
 	Zombie* horde = zombieHorde(5, "darksquad");
-	Zombie *hordeNonSense = zombieHorde(3, "herewego");
+	Zombie* hordeNonSense = zombieHorde(3, "herewego");
 
 	horde[0].announce();
 	horde[1].announce();
