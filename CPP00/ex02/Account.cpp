@@ -124,7 +124,7 @@ int Account::checkAmount(void) const
 void Account::_displayTimestamp(void)
 {
 	std::time_t now = std::time(0);
-	std::tm *total = std::localtime(&now);
+	std::tm* total = std::localtime(&now);
 	int year = total->tm_year + 1900;
 	int month = total->tm_mon + 1;
 	int day = total->tm_mday;
